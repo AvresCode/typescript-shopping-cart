@@ -1,0 +1,11 @@
+[
+  { "id": 1, "name": "Bike", "price": 170, "imgUrl": "/img/bike.jpg" },
+  {
+    "id": 2,
+    "name": "Coffee table",
+    "price": 450,
+    "imgUrl": "/img/coffeeTable.jpg"
+  },
+  { "id": 3, "name": "Laptop", "price": 920, "imgUrl": "/img/laptop.jpg" },
+  { "id": 4, "name": "Sofa", "price": 1200, "imgUrl": "/img/sofa.jpg" }
+]
