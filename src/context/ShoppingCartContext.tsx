@@ -51,9 +51,38 @@ export function ShoppingCartProvider({ children }: ShoppingCartProvideProps) {
       }
     });
   }
+
+  function decreaseCartQuantity(id: number) {
+    setCartItems((currItems) => {
+      // if the quantity of the item is 1, we remove it
+      if (currItems.find((item) => item.id === id)?.quantity === 1) {
+        return currItems.filter((item) => item.id !== id);
+      } else {
+        //if the item exists, decrement the count
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  }
+
+  function removeFromCart(id: number) {
+    setCartItems((currItems) => {
+      return currItems.filter((item) => item.id !== id);
+    });
+  }
   return (
     <ShoppingCartContext.Provider
-      value={{ getItemQuantity, increaseCartQuantity }}
+      value={{
+        getItemQuantity,
+        increaseCartQuantity,
+        decreaseCartQuantity,
+        removeFromCart,
+      }}
     >
       {children}
     </ShoppingCartContext.Provider>
