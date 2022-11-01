@@ -5,11 +5,11 @@ import { Home } from "./pages/Home";
 import Store from "./pages/Store";
 import { About } from "./pages/About";
 import { Navbar } from "./components/Navbar";
-import { ShoppingCartProvide } from "./context/ShoppingCartContext";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App() {
   return (
-    <ShoppingCartProvide>
+    <ShoppingCartProvider>
       <Navbar />
       <Container>
         <Routes>
@@ -18,7 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
-    </ShoppingCartProvide>
+    </ShoppingCartProvider>
   );
 }
 
