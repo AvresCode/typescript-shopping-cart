@@ -1,6 +1,6 @@
-import { useContext, createContext, ReactNode, useState } from "react";
-import { ShoppingCart } from "../components/ShoppingCart";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useContext, createContext, ReactNode, useState } from 'react';
+import { ShoppingCart } from '../components/ShoppingCart';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 //node is the type for the children property inside of react
 type ShoppingCartProvideProps = {
@@ -24,6 +24,7 @@ type ShoppingCartContext = {
   cartItems: CartItem[];
 };
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
 
 export function useShoppingCart() {
@@ -36,7 +37,7 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children }: ShoppingCartProvideProps) {
   //const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [cartItems, setCartItems] = useLocalStorage<CartItem[]>(
-    "shopping-cart",
+    'shopping-cart',
     []
   );
   const [isOpen, setIsOpen] = useState(false);
